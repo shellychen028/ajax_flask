@@ -16,6 +16,16 @@
         <h2 class="display-6 fw-bold text-secondary mb-4 pb-2 border-bottom">
             <i class="bi bi-image-fill me-2"></i>透過 fetch() 呼叫 api 時還需要傳遞資料給 api，api 又要如何接收這些資料？
         </h2>
+        <form id="userForm">
+            <div class="row g-2 mb-3">
+                <div class="col-4">
+                    <input type="text" name="name" id="userName" class="form-control" placeholder="輸入姓名">
+                </div>
+                <div class="col-4">
+                    <input type="number" name="age" id="userAge" class="form-control" placeholder="輸入年紀">
+                </div>
+            </div>
+        </form>
         <button id="buttonQuery" class="btn btn-primary mb-3">透過 URL QueryString 傳遞資料</button>
         <button id="buttonPath" class="btn btn-primary mb-3">透過 URL Path 傳遞資料</button>
         <button id="buttonForm" class="btn btn-primary mb-3">資料包在 FormData 中傳遞</button>
@@ -45,6 +55,9 @@
         const btnJson = document.querySelector('#buttonJson');
         const btnUpload = document.querySelector('#buttonUpload');
         const fileInput = document.querySelector('#fileInput');
+        const inpName = document.querySelector('#userName');
+        const inpAge = document.querySelector('#userAge');
+        const frmUser = document.querySelector('#userForm');
 
         const divInfo = document.querySelector('#divInfo');
         const theImg = document.querySelector('#img1');
