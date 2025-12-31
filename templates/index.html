@@ -35,6 +35,75 @@
         const imgLoader = document.querySelector('#img1');
         const btnStart = document.querySelector('#buttonStart');
 
+        btnStart.addEventListener('click', async () => {
+            const apiUrl = 'http://127.0.0.1:5000/api/hello1';
+
+            try {
+                //有可能發生錯誤
+                //async await
+                const response = await fetch(apiUrl);
+
+                //先確認 ok 為 true
+                if (!response.ok) throw new Error('有錯誤，無法取得資料!!');
+
+                const data = await response.json();
+                divInfo.innerHTML = `<h2>${data.message}</h2>`;
+
+            } catch (error) {
+                divInfo.textContent = error.message;
+            } finally {
+                console.log('請求結束!!')
+            }
+        })
+
+        // btnStart.addEventListener('click', () => {
+        //     const apiUrl = 'http://127.0.0.1:5000/api/hello';
+
+        //     fetch(apiUrl)
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             // divInfo.textContent = JSON.stringify(data); //JSON物件轉成JSON字串
+        //             divInfo.textContent = data.message;
+        //         })
+
+        // console.log(fetch(apiUrl));
+        // fetch(apiUrl)
+        //     .then(res => {
+        // console.log(res);
+        // console.log(res.headers.get('Content-Type'));
+        // console.log(res.headers.get('Content-Length'));
+        // console.log(res.status);
+        // console.log(res.ok);
+        // console.log(res.body);
+        //console.log(res.json());  //讀取 body 中 json 格式的資料，回傳的又是一個promise物件
+        //     return res.json();
+        // })
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+
+
+        // })
+
+
+
+
+        // callback 回呼涵式 => 非同步
+        // setTimeout(function () {
+        //     console.log('A');
+        // }, 1000);
+        // setTimeout(function () {
+        //     console.log('B');
+        // }, 1000);
+        // setTimeout(function () {
+        //     console.log('C');
+        // }, 1000);
+
+        // ()=>{} 箭頭函式
+        // btnStart.addEventListener('click', () =>)
+
+
+
     </script>
 </body>
 

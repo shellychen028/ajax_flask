@@ -38,16 +38,16 @@ db.init_app(app)
 #     return "Hello, World!"
 
 #Demo2
-# @app.route('/')
-# def index():
-#     return render_template('index.html') 
+@app.route('/')
+def index():
+    return render_template('index.html') 
 
 #Demo3
-# class HelloWorld(Resource):       # HelloWorld Class 就是一個 API
-#     def get(self):
-#         return {'message': 'Hello, RESTful API!'} 
+class HelloWorld(Resource):       # HelloWorld Class 就是一個 API
+    def get(self):
+        return {'message': 'Hello, RESTful API!'} 
 
-# api.add_resource(HelloWorld, '/')              
+api.add_resource(HelloWorld, '/')              
 
 # 好一點的架構
 # 註冊 Blueprint

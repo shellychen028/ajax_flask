@@ -32,6 +32,19 @@
                 { "id": 2, "UserName": "Bob", "UserEmail": "bob@company.com", "age": 34 },
                 { "id": 3, "UserName": "Charlie", "UserEmail": "charlie@company.com", "age": 22 }]
 
+
+            // [value, value, value ] 陣列
+            // {"key":value, "key":value } 物件
+
+            users.forEach((user, index, array) => {
+                console.log(user);
+                console.log(user.id);
+                console.log(user.UserName);
+                console.log(user.UserEmail);
+                console.log(user.age);
+            })
+
+
             //如何讀取 users JSON 中的資料
             //如何將讀出的資料顯示在網頁上
 
