@@ -11,7 +11,7 @@ class QueryStringDemo(Resource):
         return {"method": "QueryString", "name": name, "age": age}, 200
 
 class PathDemo(Resource):
-    def get(self, name, age): # 變數會直接作為參數傳入
+    def get(self, name, age): # 變數會直接作為參數傳入aaaaaa
         return {"method": "PathParameter", "name": name, "age": age}, 200
     
 class FormDataDemo(Resource):
